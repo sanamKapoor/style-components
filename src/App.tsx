@@ -1,35 +1,28 @@
-import { ThemeProvider } from "styled-components";
-import { Header } from "./components/Header"
-import { Contianter } from "./styles/Container"
-import { GlobalStyles } from "./styles/Global";
-import { AnimatedLogo, NewStyledButton, StyledButton, SubmitStypedButton } from "./styles/Button";
-import { StyledLink } from "./styles/Link";
-
-const theme = {
-  colors: {
-    header: '#ebfbff',
-    body: '#fff',
-    footer: '#003333'
-  }
-}
+import { ThemeProvider } from 'styled-components';
+import { Header } from './components/Header';
+import { Container } from './styles/Container';
+import { GlobalStyles } from './styles/Global';
+import { AnimatedLogo } from './styles/Button';
+import { theme } from './styles/theme';
+import { FormDemo } from './components/Form';
+import { ButtonDemo } from './components/ButtonDemo';
+import { BadgeDemo } from './components/BadgeDemo';
 
 function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Header />
-      <Contianter width="1000px">
-        <h1>Hello</h1>
-        <p>Here is the Gold!</p>
-        <StyledButton type="submit">Start</StyledButton>
-        <NewStyledButton as="a">New</NewStyledButton>
-        <SubmitStypedButton>Send</SubmitStypedButton>
-        <StyledLink>Apply</StyledLink>
-        <br />
-        <AnimatedLogo src="https://static-00.iconduck.com/assets.00/react-icon-2048x2048-o8k3ymqa.png" />
-      </Contianter>
-    </ThemeProvider>
-  );
+    return (
+        <ThemeProvider theme={theme}>
+            <GlobalStyles />
+            <Header />
+            <Container>
+                <h1>Modern Styled Components</h1>
+                <p>A starter template for 2025 and beyond!</p>
+                <ButtonDemo />
+                <FormDemo />
+                <BadgeDemo />
+                <AnimatedLogo src="https://static-00.iconduck.com/assets.00/react-icon-2048x2048-o8k3ymqa.png" />
+            </Container>
+        </ThemeProvider>
+    );
 }
 
-export default App
+export default App;
